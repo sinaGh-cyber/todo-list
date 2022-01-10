@@ -4,16 +4,16 @@ import indexRoutes from './routes/index';
 
 function App() {
   return (
-    <main>
-      <header>
-        <h1>
-          Todo list <span>PRO</span>
-        </h1>
-      </header>
+    <Router>
+      <main>
+        <header>
+          <h1>
+            Todo list <span>PRO</span>
+          </h1>
+        </header>
 
-      <section>
-        <section id="left">
-          <Router>
+        <section>
+          <section id="left">
             <Switch>
               {indexRoutes.map(({ isExact, path, component }, key) => {
                 return (
@@ -26,11 +26,9 @@ function App() {
                 );
               })}
             </Switch>
-          </Router>
-        </section>
-        <section id="right">
-          <ul>
-            <Router>
+          </section>
+          <section id="right">
+            <ul>
               {indexRoutes.map(({ path, title }, key) => {
                 return (
                   <li key={key}>
@@ -41,11 +39,11 @@ function App() {
                   </li>
                 );
               })}
-            </Router>
-          </ul>
+            </ul>
+          </section>
         </section>
-      </section>
-    </main>
+      </main>
+    </Router>
   );
 }
 
