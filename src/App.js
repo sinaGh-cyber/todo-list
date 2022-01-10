@@ -30,16 +30,18 @@ function App() {
         </section>
         <section id="right">
           <ul>
-            {indexRoutes.map(({ path, title }, key) => {
-              return (
-                <li key={key}>
-                  <Link key={key} to={path}>
-                    {' '}
-                    {title}{' '}
-                  </Link>
-                </li>
-              );
-            })}
+            <Router>
+              {indexRoutes.map(({ path, title }, key) => {
+                return (
+                  <li key={key}>
+                    <Link key={key} to={path}>
+                      {' '}
+                      {title}{' '}
+                    </Link>
+                  </li>
+                );
+              })}
+            </Router>
           </ul>
         </section>
       </section>
