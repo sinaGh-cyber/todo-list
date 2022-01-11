@@ -4,9 +4,9 @@ import Home from '../pages/Home';
 
 const indexRoutes = [
   { title: 'Home', path: '/', component: Home, isExact: true },
-  { title: 'Add product', path: '/add', component: AddProduct, isExact: false },
+  { title: 'Add', path: '/add', component: AddProduct, isExact: false },
   {
-    title: 'Detailed list',
+    title: 'Detaile',
     path: '/detailed-list',
     component: DetailedList,
     isExact: false,
