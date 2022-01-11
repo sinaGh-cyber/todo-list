@@ -35,3 +35,11 @@ h1 {
 span {
   color: rgb(224, 49, 49);
 }
+
+@media (max-width: 800px) {
+  .card {
+    flex-direction: column;
+    border-radius: 20px;
+    height: 95%;
+  }
+}
