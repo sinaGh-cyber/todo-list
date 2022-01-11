@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 main {
   width: 100vw;
   height: 100vh;
@@ -12,8 +21,17 @@ main {
   width: 90%;
   height: 80%;
   padding: 50px;
+  margin: 10px;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(163, 173, 201);
   border-radius: 150px 5px 150px 5px;
+}
+
+h1 {
+  color: #222;
+  font-family: 'Arvo', serif;
+}
+span {
+  color: rgb(224, 49, 49);
 }
