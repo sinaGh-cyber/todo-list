@@ -13,7 +13,7 @@ function App() {
           </h1>
         </header>
 
-        <section id="card">
+        <section className="card" id="card">
           <MainApp />
           <Menu />
         </section>

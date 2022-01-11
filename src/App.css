@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+/* RESET END */
+
+/**************************************/
+
+/* Real stuff */
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  width: 90%;
+  height: 80%;
+  background-color: rgb(163, 173, 201);
+  border-radius: 150px 5px 150px 5px;
+}
