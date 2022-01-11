@@ -6,7 +6,7 @@
   width: 30%;
   height: 100%;
   background-color: rgba(72, 72, 190, 0.199);
-  border-radius: 0 0 60px 0;
+  border-radius: 5px 5px 60px 5px;
 }
 
 ul {
@@ -44,6 +44,11 @@ li:hover {
 li:active {
   transform: scale(0.98);
   transition: all 0.1s linear;
+}
+
+.selected {
+  background-color: rgb(240, 182, 95);
+  border-radius: inherit;
 }
 
 @media (max-width: 800px) {

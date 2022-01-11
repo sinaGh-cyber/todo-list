@@ -1,5 +1,5 @@
 import Classes from './menu.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import indexRoutes from '../../routes/index';
 import styled from 'styled-components';
 
@@ -25,14 +25,21 @@ const StyledLink = styled(Link)`
     color: #fff;
   }
 `;
+
 const Menu = () => {
+  const { pathname } = useLocation();
+
   return (
     <section id={Classes.right}>
       <ul>
         {indexRoutes.map(({ path, title }, key) => {
           return (
             <li key={key}>
-              <StyledLink key={key} to={path}>
+              <StyledLink
+                className={pathname === path ? Classes.selected : ''}
+                key={key}
+                to={path}
+              >
                 {' '}
                 {title}{' '}
               </StyledLink>
