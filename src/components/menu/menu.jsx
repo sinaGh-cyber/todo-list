@@ -1,4 +1,4 @@
-import './menu.css';
+import Classes from './menu.module.css';
 import { Link } from 'react-router-dom';
 import indexRoutes from '../../routes/index';
 
