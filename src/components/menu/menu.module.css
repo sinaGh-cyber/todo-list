@@ -71,4 +71,10 @@ li:active {
     height: 70%;
     width: 30%;
   }
+  li:hover {
+    transform: scale(1);
+  }
+  li:active {
+    transform: scale(1);
+  }
 }
