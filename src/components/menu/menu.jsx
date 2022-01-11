@@ -14,6 +14,16 @@ const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: large;
+  font-family: 'Arvo', serif;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:active {
+    color: #fff;
+  }
 `;
 const Menu = () => {
   return (

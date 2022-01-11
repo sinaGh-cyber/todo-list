@@ -5,6 +5,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 main {
@@ -14,6 +15,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .card {
@@ -26,6 +28,7 @@ main {
   align-items: center;
   background-color: rgb(163, 173, 201);
   border-radius: 150px 5px 150px 5px;
+  overflow: hidden;
 }
 
 h1 {
