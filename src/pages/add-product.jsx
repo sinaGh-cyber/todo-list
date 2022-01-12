@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Classes } from './addProduct.module.css';
+import  Classes  from './addProduct.module.css';
 
 const AddProduct = () => {
   const {
@@ -15,7 +15,7 @@ const AddProduct = () => {
 
   return (
     <form onSubmit={handleSubmit(submitter)}>
-      <div className="title" className={Classes.myInput}>
+      <div className={(Classes.myInput, Classes.title)}>
         <label htmlFor="title">Title</label>
         <input
           {...register('title', {
@@ -27,7 +27,7 @@ const AddProduct = () => {
         <p className="error"></p>
       </div>
 
-      <div className="priority" className={Classes.myInput}>
+      <div className={(Classes.myInput, Classes.priority)}>
         <label className="priority">priority</label>
         <input
           {...register('priority', {
@@ -52,7 +52,7 @@ const AddProduct = () => {
         />
       </div>
 
-      <div className="description" className={Classes.myInput}>
+      <div className={(Classes.myInput, Classes.description)}>
         <label htmlFor="description">description</label>
         <textarea
           id="description"
