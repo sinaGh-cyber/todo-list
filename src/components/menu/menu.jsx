@@ -24,6 +24,12 @@ const StyledLink = styled(Link)`
   &:active {
     color: #fff;
   }
+
+  &.selectedStyleComponent {
+    background-color: rgb(240, 182, 95);
+    color: #fff;
+    border-radius: 10px;
+  }
 `;
 
 const Menu = () => {
@@ -37,6 +43,7 @@ const Menu = () => {
             <li key={key}>
               <StyledLink
                 className={pathname === path ? Classes.selected : ''}
+                className={pathname === path ? 'selectedStyleComponent' : ''}
                 key={key}
                 to={path}
               >
