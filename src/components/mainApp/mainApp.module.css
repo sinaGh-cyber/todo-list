@@ -1,0 +1,19 @@
+#left {
+  width: 70%;
+  height: 100%;
+  background-color: rgba(63, 127, 179, 0.493);
+  border-radius: 100px 5px 5px 5px;
+  margin: 0 8px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  #left {
+    align-self: flex-start;
+    height: 89%;
+    width: 100%;
+    border-radius: 10px;
+  }
+}
