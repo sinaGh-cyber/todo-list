@@ -42,7 +42,7 @@ const Menu = () => {
           return (
             <li key={key}>
               <StyledLink
-                className={pathname === path ? Classes.selected : ''}
+
                 className={pathname === path ? 'selectedStyleComponent' : ''}
                 key={key}
                 to={path}

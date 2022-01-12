@@ -46,11 +46,6 @@ li:active {
   transition: all 0.1s linear;
 }
 
-.selected {
-  background-color: rgb(240, 182, 95);
-  border-radius: inherit;
-}
-
 @media (max-width: 800px) {
   ul {
     flex-direction: row;
