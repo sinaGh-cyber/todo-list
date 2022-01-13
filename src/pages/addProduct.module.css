@@ -31,12 +31,14 @@ form div {
   background-color: rgb(199, 238, 238);
   border-radius: 10px;
   outline: none;
+  border: none;
 }
 
 label,
 input,
 textarea {
   font-family: 'Lora', serif;
+  color: blanchedalmond;
 }
 
 label {
