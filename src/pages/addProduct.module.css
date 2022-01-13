@@ -1,16 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
 form {
-  width: 80%;
+  /* width: 80%; */
   height: 90%;
   background-color: rgba(95, 158, 160, 0.226);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
-.myInput {
+form div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+}
+
+#title {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#title input {
+  height: 35px;
+  width: 50%;
+  background-color: rgb(199, 238, 238);
+  border-radius: 10px;
+  outline: none;
+}
+
+label,
+input,
+textarea {
+  font-family: 'Lora', serif;
+}
+
+label {
+  margin: 1rem;
+  align-self: flex-start;
+  font-size: large;
+}
+
+textarea {
+  width: 400px;
+  height: 250px;
+  resize: none;
+  background-color: rgb(199, 238, 238);
+  border-radius: 30px;
+  outline: none;
+  padding: 12px;
+}
+
+#priority {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#priority div {
+  /* align-items: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+input[type='radio'] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+#priority input {
+  /* justify-self: start; */
+  background-color: rgb(255, 0, 34);
+  border: none;
+  padding: 20px;
+  margin: 10px 10px -10px 0;
+  border-radius: 50%;
+}
+#priority input:checked {
+  border: rgba(0, 0, 0, 0.568) solid 5px;
+}
+
+#priority input[value='1'] {
+  background-color: green;
+}
+
+#priority input[value='2'] {
+  background-color: yellow;
+}
+#priority input[value='3'] {
+  background-color: rgb(255, 0, 0);
+}
+
+input[type='submit'] {
+  border-radius: 15px;
+  background-color: blanchedalmond;
+  color: blue;
+  width: 40%;
+  height: 50px;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  font-family: 'Lora', serif;
+  font-size: large;
+  transition: all 0.2s linear;
+}
+
+input[type='submit']:hover {
+  background-color: rgb(216, 157, 68);
+  color: #fff;
+  transform: scale(1.02);
+  transition: all 0.2s linear;
+}
+
+input[type='submit']:active {
+  background-color: rgb(216, 157, 68);
+  color: #fff;
+  transform: scale(0.98);
+  transition: all 0.2s linear;
+}
+
+@media (max-width: 800px) {
+  label {
+    align-self: center;
+  }
+
+  textarea {
+    width: 70vw;
+  }
 }
