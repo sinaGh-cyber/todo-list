@@ -38,13 +38,13 @@ label,
 input,
 textarea {
   font-family: 'Lora', serif;
-  color: blanchedalmond;
 }
 
 label {
   margin: 1rem;
   align-self: flex-start;
-  font-size: large;
+  font-size: larger;
+  color: blanchedalmond;
 }
 
 textarea {
@@ -135,5 +135,8 @@ input[type='submit']:active {
 
   textarea {
     width: 70vw;
+  }
+  #description label {
+    align-self: flex-start;
   }
 }
