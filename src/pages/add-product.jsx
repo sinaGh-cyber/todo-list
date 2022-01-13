@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Classes from './addProduct.module.css';
 
@@ -7,7 +7,12 @@ const AddProduct = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm();
+
+  useEffect(() => {
+    setValue('priority', '1');
+  });
 
   const submitter = (data) => {
     console.log(data);
