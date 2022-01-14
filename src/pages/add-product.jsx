@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useRef } from 'react/cjs/react.development';
+
 import Classes from './addProduct.module.css';
 
 const AddProduct = () => {
-  const errorEl = useRef();
-
   const {
     register,
     handleSubmit,
@@ -25,7 +23,6 @@ const AddProduct = () => {
     <>
       {
         <p
-          ref={errorEl}
           style={
             errors.title
               ? {
