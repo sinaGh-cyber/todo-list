@@ -15,7 +15,7 @@ const AddProduct = () => {
 
   useEffect(() => {
     setValue('priority', '1');
-  }, []);
+  }, [setValue]);
 
   const submitter = (data) => {
     console.log(data);
@@ -35,7 +35,10 @@ const AddProduct = () => {
                 }
               : { backgroundColor: 'transparent', color: 'transparent' }
           }
-          onClick={e => { e.target.style =' backgroundColor: transparent ; color: transparent '}}
+          onClick={(e) => {
+            e.target.style =
+              ' backgroundColor: transparent ; color: transparent ';
+          }}
           className={Classes.error}
         >
           {errors.title?.message}
