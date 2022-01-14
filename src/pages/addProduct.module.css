@@ -26,12 +26,13 @@ form div {
 }
 
 #title input {
-  height: 35px;
-  width: 50%;
+  height: 38px;
+  width: 60%;
   background-color: rgb(199, 238, 238);
   border-radius: 10px;
   outline: none;
   border: none;
+  margin: 0 65px 0 0;
 }
 
 label,
@@ -45,6 +46,12 @@ label {
   align-self: flex-start;
   font-size: larger;
   color: blanchedalmond;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 textarea {
@@ -138,5 +145,14 @@ input[type='submit']:active {
   }
   #description label {
     align-self: flex-start;
+  }
+  #description {
+    height: 65%;
+  }
+}
+
+@media (max-height: 700px) {
+  #description {
+    height: 63%;
   }
 }

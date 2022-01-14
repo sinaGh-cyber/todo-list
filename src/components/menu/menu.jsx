@@ -16,6 +16,12 @@ const StyledLink = styled(Link)`
   align-items: center;
   font-size: large;
   font-family: 'Arvo', serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &:hover {
     color: #fff;
@@ -42,7 +48,6 @@ const Menu = () => {
           return (
             <li key={key}>
               <StyledLink
-
                 className={pathname === path ? 'selectedStyleComponent' : ''}
                 key={key}
                 to={path}
