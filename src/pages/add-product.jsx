@@ -13,11 +13,12 @@ const AddProduct = () => {
   } = useForm();
 
   const errorEl = useRef(undefined);
-
+  useEffect(() => {
+    setIsSubmiting(false);
+    setValue('priority', '1');
+  }, []);
 
   useEffect(() => {
-    setValue('priority', '1');
-
     isSubmiting &&
       errorEl.current &&
       errors.title &&
@@ -27,13 +28,11 @@ const AddProduct = () => {
       errorEl.current.style =
         'background-color: transparent; color: transparent;transition: all 2s linear;';
     }, 3000);
-  }, [setIsSubmiting, isSubmiting, errors.title, setValue]);
-
+  }, [setIsSubmiting, isSubmiting, errors.title]);
 
   const submitter = (data) => {
     console.log(data);
   };
-  
 
   return (
     <>
