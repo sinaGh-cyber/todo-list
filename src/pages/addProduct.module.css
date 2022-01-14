@@ -32,7 +32,7 @@ form div {
   border-radius: 10px;
   outline: none;
   border: none;
-  margin: 0 65px 0 0;
+  /* margin: 0 0px 0 0; */
 }
 
 label,
@@ -135,6 +135,22 @@ input[type='submit']:active {
   transition: all 0.2s linear;
 }
 
+.error {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 5vh;
+  right: 2vw;
+  padding: 10px 30px;
+  height: 5vh;
+  background-color: transparent;
+
+  color: rgb(223, 235, 220);
+  border-radius: 10px;
+}
+
 @media (max-width: 800px) {
   label {
     align-self: center;
@@ -148,6 +164,11 @@ input[type='submit']:active {
   }
   #description {
     height: 65%;
+  }
+
+  .error {
+    right: auto;
+    margin: auto;
   }
 }
 
