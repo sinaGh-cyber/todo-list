@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRef } from 'react/cjs/react.development';
 import Classes from './addProduct.module.css';
 
 const AddProduct = () => {
-  const [isSubmiting, setIsSubmiting] = useState(false);
+  const errorEl = useRef();
 
   const {
     register,
@@ -12,23 +13,9 @@ const AddProduct = () => {
     setValue,
   } = useForm();
 
-  const errorEl = useRef(undefined);
   useEffect(() => {
-    setIsSubmiting(false);
     setValue('priority', '1');
   }, []);
-
-  useEffect(() => {
-    isSubmiting &&
-      errorEl.current &&
-      errors.title &&
-      (errorEl.current.style = 'background-color: #fd3e3e;');
-    setIsSubmiting(false);
-    setTimeout(() => {
-      errorEl.current.style =
-        'background-color: transparent; color: transparent;transition: all 2s linear;';
-    }, 3000);
-  }, [setIsSubmiting, isSubmiting, errors.title]);
 
   const submitter = (data) => {
     console.log(data);
@@ -36,16 +23,25 @@ const AddProduct = () => {
 
   return (
     <>
-      <p ref={errorEl} className={Classes.error}>
-        {errors.title?.message}
-      </p>
-
-      <form
-        onClick={() => {
-          setIsSubmiting(true);
-        }}
-        onSubmit={handleSubmit(submitter)}
-      >
+      {
+        <p
+          ref={errorEl}
+          style={
+            errors.title
+              ? {
+                  backgroundColor: 'red',
+                  color: '#fff',
+                  transition: 'all 0.2s linear',
+                }
+              : { backgroundColor: 'transparent', color: 'transparent' }
+          }
+          onClick={e => { e.target.style =' backgroundColor: transparent ; color: transparent '}}
+          className={Classes.error}
+        >
+          {errors.title?.message}
+        </p>
+      }
+      <form onSubmit={handleSubmit(submitter)}>
         <div id={Classes.title}>
           <label htmlFor="title">Title:</label>
           <input
