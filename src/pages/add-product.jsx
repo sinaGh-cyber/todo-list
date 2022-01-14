@@ -1,39 +1,52 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Classes from './addProduct.module.css';
 
 const AddProduct = () => {
+  const [isSubmiting, setIsSubmiting] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
   } = useForm();
+
   const errorEl = useRef(undefined);
+
+
   useEffect(() => {
     setValue('priority', '1');
-    console.dir(errorEl.current);
 
-    errorEl.current &&
+    isSubmiting &&
+      errorEl.current &&
       errors.title &&
-      (errorEl.current.style = 'background-color: rgba(247, 36, 36, 0.815);');
+      (errorEl.current.style = 'background-color: #fd3e3e;');
+    setIsSubmiting(false);
     setTimeout(() => {
       errorEl.current.style =
         'background-color: transparent; color: transparent;transition: all 2s linear;';
-    }, 7000);
-  });
+    }, 3000);
+  }, [setIsSubmiting, isSubmiting, errors.title, setValue]);
+
 
   const submitter = (data) => {
     console.log(data);
   };
-  console.log(errors);
+  
+
   return (
     <>
       <p ref={errorEl} className={Classes.error}>
         {errors.title?.message}
       </p>
 
-      <form onSubmit={handleSubmit(submitter)}>
+      <form
+        onClick={() => {
+          setIsSubmiting(true);
+        }}
+        onSubmit={handleSubmit(submitter)}
+      >
         <div id={Classes.title}>
           <label htmlFor="title">Title:</label>
           <input

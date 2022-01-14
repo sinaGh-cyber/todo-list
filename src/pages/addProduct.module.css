@@ -141,8 +141,8 @@ input[type='submit']:active {
   justify-content: center;
   align-items: center;
 
-  top: 5vh;
-  right: 2vw;
+  top: 40px;
+  right: 6vw;
   padding: 10px 30px;
   height: 5vh;
   background-color: transparent;
