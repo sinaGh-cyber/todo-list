@@ -8,11 +8,11 @@ const PriorityQueueProvider = ({ children }) => {
   const [priorityQueue, setPriorityQueue] = useState(new PriorityQueue());
 
   if (localStorage.getItem('myPriorityQueue')) {
-    priorityQueue.values = localStorage.getItem('myPriorityQueue').json.parse();
+    priorityQueue.values = JSON.parse(localStorage.getItem('myPriorityQueue'));
   }
 
   const updatePriorityQueue = () => {
-    const stringifyPriorityQueue = priorityQueue.values.json.stringify();
+    const stringifyPriorityQueue = JSON.stringify(priorityQueue.values);
     localStorage.setItem('myPriorityQueue', stringifyPriorityQueue);
     setPriorityQueue({ ...priorityQueue });
   };
