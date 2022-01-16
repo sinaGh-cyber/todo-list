@@ -25,4 +25,11 @@ const PriorityQueueProvider = ({ children }) => {
   );
 };
 
+const usePriorityQueue = () => {
+  const myContext = useContext(PriorityQueueContext);
+  if (myContext) return myContext;
+  throw new Error('provider issue');
+};
+
 export default PriorityQueueProvider;
+export { usePriorityQueue };
