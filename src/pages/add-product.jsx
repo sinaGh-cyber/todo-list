@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { usePriorityQueue } from '../provider/priorityQueueProvider';
 import Classes from './addProduct.module.css';
-import timeValueGenerator from '../components/TimeValueGenerator/TimeValueGenerator';
 
 const AddProduct = () => {
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
@@ -20,7 +19,7 @@ const AddProduct = () => {
 
   const submitter = (data) => {
     console.log(priorityQueue);
-    priorityQueue.enqueue(data, Number(data.priority + timeValueGenerator() ));
+    priorityQueue.enqueue(data, Number(data.priority + new Date().getTime()));
     updatePriorityQueue();
     // console.log(priorityQueue.dequeue());
   };
