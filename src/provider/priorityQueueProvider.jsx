@@ -1,5 +1,4 @@
 import PriorityQueue from '../components/priorityQueue/priorityQueue';
-import { Node } from '../components/priorityQueue/priorityQueue';
 import React, { useContext, useState } from 'react';
 import { createContext } from 'react/cjs/react.development';
 import { cloneDeep } from 'lodash';
