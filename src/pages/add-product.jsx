@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { usePriorityQueue } from '../provider/priorityQueueProvider';
 import Classes from './addProduct.module.css';
 
 const AddProduct = () => {
+  const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
+
   const {
     register,
     handleSubmit,
@@ -12,11 +14,14 @@ const AddProduct = () => {
   } = useForm();
 
   useEffect(() => {
-    setValue('priority', '1');
+    setValue('priority', '3');
   }, [setValue]);
 
   const submitter = (data) => {
-    console.log(data);
+    console.log(priorityQueue);
+    priorityQueue.enqueue(data, Number(data.priority));
+    updatePriorityQueue();
+    // console.log(priorityQueue.dequeue());
   };
 
   return (
@@ -62,7 +67,7 @@ const AddProduct = () => {
                 required: "you haven't select a priority",
               })}
               type="radio"
-              value="1"
+              value="3"
             />
             <input
               name="priority"
@@ -78,7 +83,7 @@ const AddProduct = () => {
                 required: "you haven't select a priority",
               })}
               type="radio"
-              value="3"
+              value="1"
             />
           </div>
         </div>

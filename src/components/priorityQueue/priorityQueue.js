@@ -67,3 +67,5 @@ class Node {
         this.priority = priority;
     }
 }
+
+export {Node};

@@ -22,17 +22,17 @@ form div {
 
 #title {
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: stretch;
 }
 
 #title input {
   height: 38px;
-  width: 60%;
+  width: 80%;
   background-color: rgb(199, 238, 238);
   border-radius: 10px;
   outline: none;
   border: none;
-  /* margin: 0 0px 0 0; */
+  /* margin: 0 58px 0 0; */
 }
 
 label,
@@ -96,14 +96,14 @@ input[type='radio'] {
   border: rgba(0, 0, 0, 0.568) solid 5px;
 }
 
-#priority input[value='1'] {
+#priority input[value='3'] {
   background-color: green;
 }
 
 #priority input[value='2'] {
   background-color: yellow;
 }
-#priority input[value='3'] {
+#priority input[value='1'] {
   background-color: rgb(255, 0, 0);
 }
 

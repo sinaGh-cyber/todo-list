@@ -1,6 +1,8 @@
 import PriorityQueue from '../components/priorityQueue/priorityQueue';
+import { Node } from '../components/priorityQueue/priorityQueue';
 import React, { useContext, useState } from 'react';
 import { createContext } from 'react/cjs/react.development';
+import { cloneDeep } from 'lodash';
 
 const PriorityQueueContext = createContext(undefined);
 
@@ -14,7 +16,8 @@ const PriorityQueueProvider = ({ children }) => {
   const updatePriorityQueue = () => {
     const stringifyPriorityQueue = JSON.stringify(priorityQueue.values);
     localStorage.setItem('myPriorityQueue', stringifyPriorityQueue);
-    setPriorityQueue({ ...priorityQueue });
+    console.log(priorityQueue);
+    setPriorityQueue(cloneDeep(priorityQueue));
   };
   return (
     <PriorityQueueContext.Provider
