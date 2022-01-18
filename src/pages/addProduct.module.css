@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
+
+
 form {
   /* width: 80%; */
   height: 90%;
@@ -41,7 +43,8 @@ textarea {
   font-family: 'Lora', serif;
 }
 
-label {
+label,
+p {
   margin: 1rem;
   align-self: flex-start;
   font-size: larger;
@@ -157,6 +160,7 @@ input[type='submit']:active {
 }
 .success {
   background-color: #39db80;
+  
 }
 
 @media (max-width: 800px) {

@@ -61,12 +61,13 @@ const AddProduct = () => {
                   backgroundColor: 'red',
                   color: '#fff',
                   transition: 'all 0.2s linear',
+                  zIndex: '0',
                 }
               : { backgroundColor: 'transparent', color: 'transparent' }
           }
           onClick={(e) => {
             e.target.style =
-              ' backgroundColor: transparent ; color: transparent ';
+              ' backgroundColor: transparent ; color: transparent; z-index: -1;';
           }}
           className={`${Classes.error} ${Classes.alert}`}
         >
