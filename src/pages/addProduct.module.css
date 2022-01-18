@@ -136,6 +136,10 @@ input[type='submit']:active {
 }
 
 .error {
+  background-color: transparent;
+}
+
+.alert {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -145,10 +149,14 @@ input[type='submit']:active {
   right: 6vw;
   padding: 10px 30px;
   height: 5vh;
-  background-color: transparent;
 
-  color: rgb(223, 235, 220);
+  color: #fff;
   border-radius: 10px;
+
+  transition: all 0.2 linear;
+}
+.success {
+  background-color: #39db80;
 }
 
 @media (max-width: 800px) {
@@ -167,6 +175,10 @@ input[type='submit']:active {
   }
 
   .error {
+    right: auto;
+    margin: auto;
+  }
+  .success {
     right: auto;
     margin: auto;
   }

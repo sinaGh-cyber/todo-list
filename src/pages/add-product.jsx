@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRef, useState } from 'react/cjs/react.development';
 import { usePriorityQueue } from '../provider/priorityQueueProvider';
 import Classes from './addProduct.module.css';
+const UnSubmittableTime = 3000;
 
 const AddProduct = () => {
+  const [prevTime, setPrevTime] = useState(undefined);
+
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
 
   const {
@@ -17,15 +21,38 @@ const AddProduct = () => {
     setValue('priority', '3');
   }, [setValue]);
 
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const showSuccessAlert = () => {
+    setIsSuccess(true);
+    setTimeout(() => setIsSuccess(false), UnSubmittableTime);
+  };
+
   const submitter = (data) => {
-    console.log(priorityQueue);
-    priorityQueue.enqueue(data, Number(data.priority + new Date().getTime()));
-    updatePriorityQueue();
-    // console.log(priorityQueue.dequeue());
+    const currentTime = new Date().getTime();
+
+    if (!prevTime || prevTime + UnSubmittableTime < currentTime) {
+      priorityQueue.enqueue(data, Number(data.priority + currentTime));
+      setPrevTime(currentTime);
+      showSuccessAlert();
+      updatePriorityQueue();
+    }
+    if (!prevTime) setPrevTime(currentTime);
   };
 
   return (
     <>
+      {isSuccess && (
+        <p
+          onClick={() => {
+            setIsSuccess(false);
+          }}
+          className={`${Classes.success} ${Classes.alert}`}
+        >
+          Task added successfully.
+        </p>
+      )}
+
       {
         <p
           style={
@@ -41,7 +68,7 @@ const AddProduct = () => {
             e.target.style =
               ' backgroundColor: transparent ; color: transparent ';
           }}
-          className={Classes.error}
+          className={`${Classes.error} ${Classes.alert}`}
         >
           {errors.title?.message}
         </p>
