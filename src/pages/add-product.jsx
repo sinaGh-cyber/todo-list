@@ -7,20 +7,16 @@ const UnSubmittableTime = 3000;
 
 const AddProduct = () => {
   const [prevTime, setPrevTime] = useState(undefined);
-
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
   } = useForm();
-
   useEffect(() => {
     setValue('priority', '3');
   }, [setValue]);
-
   const [isSuccess, setIsSuccess] = useState(false);
 
   const showSuccessAlert = () => {
