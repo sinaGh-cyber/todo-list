@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-
-
 form {
   /* width: 80%; */
   height: 90%;
@@ -160,7 +158,6 @@ input[type='submit']:active {
 }
 .success {
   background-color: #39db80;
-  
 }
 
 @media (max-width: 800px) {

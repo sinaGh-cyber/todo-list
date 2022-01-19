@@ -29,7 +29,7 @@ const AddProduct = () => {
 
     if (!prevTime || prevTime + UnSubmittableTime < currentTime) {
       const priority = Number(data.priority + currentTime);
-      
+
       delete data.priority;
       if (!data.description) delete data.description;
 
@@ -66,10 +66,6 @@ const AddProduct = () => {
                 }
               : { backgroundColor: 'transparent', color: 'transparent' }
           }
-          onClick={(e) => {
-            e.target.style =
-              ' backgroundColor: transparent ; color: transparent; z-index: -1;';
-          }}
           className={`${Classes.error} ${Classes.alert}`}
         >
           {errors.title?.message || errors.pattern?.message}
