@@ -77,7 +77,7 @@ const AddProduct = () => {
             {...register('title', {
               required: "you haven't entered title",
               pattern: {
-                value: /[^\s-!"£$%^&*\(\)_+?>'@:;</.,\{\}|`\[\]¬~#]/,
+                value: /[^\s-!"£$%^&*()_+?>'@:;</.,{}|`[\]¬~#]/,
                 message: 'title is invalid',
               },
             })}
