@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import {  useState } from 'react/cjs/react.development';
+import { useState } from 'react/cjs/react.development';
 import { usePriorityQueue } from '../provider/priorityQueueProvider';
 import Classes from './addProduct.module.css';
 const UnSubmittableTime = 3000;
@@ -67,7 +67,7 @@ const AddProduct = () => {
           }}
           className={`${Classes.error} ${Classes.alert}`}
         >
-          {errors.title?.message}
+          {errors.title?.message || errors.pattern?.message}
         </p>
       }
       <form onSubmit={handleSubmit(submitter)}>
@@ -76,6 +76,10 @@ const AddProduct = () => {
           <input
             {...register('title', {
               required: "you haven't entered title",
+              pattern: {
+                value: /^(?!\s*$).+/,
+                message: 'title is invalid',
+              },
             })}
             id="title"
             type="text"
