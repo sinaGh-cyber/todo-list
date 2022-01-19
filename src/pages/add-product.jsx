@@ -28,7 +28,12 @@ const AddProduct = () => {
     const currentTime = new Date().getTime();
 
     if (!prevTime || prevTime + UnSubmittableTime < currentTime) {
-      priorityQueue.enqueue(data, Number(data.priority + currentTime));
+      const priority = Number(data.priority + currentTime);
+      
+      delete data.priority;
+      if (!data.description) delete data.description;
+
+      priorityQueue.enqueue(data, priority);
       setPrevTime(currentTime);
       showSuccessAlert();
       updatePriorityQueue();
