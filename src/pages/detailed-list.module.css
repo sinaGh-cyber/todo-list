@@ -1,9 +1,37 @@
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(101, 107, 136);
+  background-color: rgb(253, 210, 154);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(240, 182, 95);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(216, 157, 68);
+}
+
 .container {
   width: 80%;
   height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
   height: 95%;
   width: 95%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

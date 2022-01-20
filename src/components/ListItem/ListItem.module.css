@@ -1,8 +1,8 @@
 .listItem {
-  width: 100%;
+  width: 95%;
   height: 5%;
   margin: 0 0 2px 0;
-  padding: 0;
+  padding: 5px;
   background-color: blanchedalmond;
   color: aliceblue;
 }
