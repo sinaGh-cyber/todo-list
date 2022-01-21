@@ -12,16 +12,18 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(240, 182, 95);
+  background: rgb(228, 153, 40);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(216, 157, 68);
+  background: rgb(218, 143, 31);
 }
 
 .container {
+    align-self:center;
+    justify-self:right;
   width: 80%;
   height: 95%;
   display: flex;
@@ -29,9 +31,22 @@
   align-items: center;
 }
 
-ul {
+.detailedUl {
   height: 95%;
   width: 95%;
+
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media (max-width: 800px) {
+  .detailedUl {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+  }
 }

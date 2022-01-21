@@ -16,12 +16,10 @@ const DetailedList = () => {
     let listItem = (
       <ListItem
         key={itemData.priority}
-        priority={Number((itemData.priority + '')[0])}
+        priority={itemData.priority}
         description={itemData.val?.description}
-      >
-        {' '}
-        {itemData.val.title}
-      </ListItem>
+        title={itemData.val.title}
+      />
     );
 
     listItems.push(listItem);
@@ -30,7 +28,7 @@ const DetailedList = () => {
   return (
     <>
       <section className={Classes.container}>
-        <ul className="detailedList">{listItems}</ul>
+        <ul className={Classes.detailedUl}>{listItems}</ul>
       </section>
     </>
   );
