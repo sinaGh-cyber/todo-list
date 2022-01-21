@@ -47,6 +47,17 @@
   background-color: transparent;
 }
 
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .expend {
   position: relative;
   width: 50%;
@@ -56,17 +67,45 @@
   border: none;
   transition: all 0.1s linear;
 }
-.expend:hover{
-    transform: translateY(5px);
+.expend:hover {
+  transform: translateY(5px);
 }
 .expend .icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-image: url('../../icons/down-arrow.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+}
+.done {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: all 0.1s linear;
+}
+.delete {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: all 0.1s linear;
+}
+
+.delete .icon {
+    background-image: url(../../icons/delete.png);
+}
+
+.done .icon {
+    background-image: url(../../icons/done.png);
 }
