@@ -80,6 +80,31 @@
   z-index: 0;
 }
 
+.shrink {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: all 0.1s linear;
+    z-index: 1;
+}
+
+.shrink:hover {
+    transform: translateY(-5px);
+}
+
+.shrink:active .icon {
+    transform: translateY(-8px);
+  }
+
+  .shrink .icon {
+    background-image: url('../../icons/up-arrows.png');
+    transition: all 0.1s linear;
+    z-index: 0;
+  }
+
 .buttonGroup {
   display: flex;
   flex-direction: column;

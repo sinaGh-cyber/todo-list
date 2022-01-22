@@ -32,8 +32,11 @@ const ListItem = ({ priority, description, title }) => {
           </div>
           <button
             className={Classes.expend}
-            onClick={() => {
+            onClick={(e) => {
               setDescriptionIsShowed(!descriptionIsShowed);
+              console.log(e.target.parentElement);
+              const ButtonClass = (e.target.parentElement.className === Classes.expend) ? Classes.shrink : Classes.expend; 
+              e.target.parentElement.className= ButtonClass;
             }}
           >
             <i className={Classes.icon}></i>
