@@ -54,7 +54,7 @@
   right: 0;
   bottom: 0;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -66,12 +66,18 @@
   outline: none;
   border: none;
   transition: all 0.1s linear;
+  z-index: 1;
 }
 .expend:hover {
   transform: translateY(5px);
 }
+.expend:active .icon {
+  transform: translateY(8px);
+}
 .expend .icon {
   background-image: url('../../icons/down-arrow.png');
+  transition: all 0.1s linear;
+  z-index: 0;
 }
 
 .buttonGroup {
@@ -100,12 +106,35 @@
   outline: none;
   border: none;
   transition: all 0.1s linear;
+  z-index: 1;
 }
 
 .delete .icon {
-    background-image: url(../../icons/delete.png);
+  background-image: url(../../icons/delete.png);
+  background-color: red;
+  z-index: 0;
 }
 
+.delete:hover .icon {
+  transform: scale(1.02);
+  background-color: rgb(235, 60, 60);
+  transition: all 0.1s linear;
+}
+
+.delete:active .icon {
+  transform: scale(0.99);
+  transition: all 0.1s linear;
+}
 .done .icon {
-    background-image: url(../../icons/done.png);
+  background-image: url(../../icons/done.png);
+  background-color: rgb(30, 255, 0);
+}
+.done:hover .icon {
+  transform: scale(1.02);
+  background-color: rgb(29, 199, 29);
+  transition: all 0.1s linear;
+}
+.done:active .icon {
+  transform: scale(0.99);
+  transition: all 0.1s linear;
 }
