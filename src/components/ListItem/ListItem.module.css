@@ -87,7 +87,7 @@
   align-items: stretch;
   height: 100%;
   width: 100%;
-  background-color: gray;
+  background-color: transparent;
 }
 .done {
   height: 50%;

@@ -1,6 +1,9 @@
+import { useState } from 'react/cjs/react.development';
 import Classes from './ListItem.module.css';
 
 const ListItem = ({ priority, description, title }) => {
+  const [descriptionIsShowed, setDescriptionIsShowed] = useState(false);
+
   let priorityClass;
   const priorityCode = Number((priority + '')[0]);
 
@@ -27,11 +30,23 @@ const ListItem = ({ priority, description, title }) => {
               <i className={Classes.icon}></i>
             </button>
           </div>
-          <button className={Classes.expend}>
+          <button
+            className={Classes.expend}
+            onClick={() => {
+              setDescriptionIsShowed(!descriptionIsShowed);
+            }}
+          >
             <i className={Classes.icon}></i>
           </button>
         </div>
       </li>
+      {descriptionIsShowed && (
+        <aside>
+          <textarea name="" id="" cols="30" rows="10">
+            {description}
+          </textarea>
+        </aside>
+      )}
     </>
   );
 };
