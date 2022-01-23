@@ -36,10 +36,12 @@ form {
   /* visibility: hidden; */
   transform: translateY(-50px);
   transition: all 0.15s linear;
+  z-index: -1.5;
 }
 .show + form {
   visibility: visible;
   transform: translateY(0);
+  transition: all 0.15s linear;
 }
 form textarea {
   width: 90%;

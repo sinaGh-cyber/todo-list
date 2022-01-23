@@ -48,7 +48,8 @@ const ListItem = ({ priority, description, title }) => {
           <button
             className={Classes.expend}
             onClick={(e) => {
-              setDescriptionIsShowed(!descriptionIsShowed);
+              if (!descriptionIsShowed) setDescriptionIsShowed(true);
+
               const ButtonClass =
                 e.target.parentElement.className === Classes.expend
                   ? Classes.shrink
@@ -57,15 +58,22 @@ const ListItem = ({ priority, description, title }) => {
               if (e.target.parentElement.classList.contains(Classes.expend)) {
                 console.log('here');
                 setTimeout(() => {
-                  console.log(e.target.parentElement.parentElement.parentElement);
+                  console.log(
+                    e.target.parentElement.parentElement.parentElement
+                  );
                   e.target.parentElement.parentElement.parentElement.classList.add(
                     Classes.show
                   );
                 }, 20);
               } else {
                 e.target.parentElement.parentElement.parentElement.classList.remove(
-                    Classes.show
-                  );
+                  Classes.show
+                );
+                setTimeout(() => {
+                  if (descriptionIsShowed) {
+                    setDescriptionIsShowed(false);
+                  }
+                }, 150);
               }
               e.target.parentElement.className = ButtonClass;
             }}
