@@ -35,8 +35,11 @@ const ListItem = ({ priority, description, title }) => {
             onClick={(e) => {
               setDescriptionIsShowed(!descriptionIsShowed);
               console.log(e.target.parentElement);
-              const ButtonClass = (e.target.parentElement.className === Classes.expend) ? Classes.shrink : Classes.expend; 
-              e.target.parentElement.className= ButtonClass;
+              const ButtonClass =
+                e.target.parentElement.className === Classes.expend
+                  ? Classes.shrink
+                  : Classes.expend;
+              e.target.parentElement.className = ButtonClass;
             }}
           >
             <i className={Classes.icon}></i>
@@ -44,11 +47,10 @@ const ListItem = ({ priority, description, title }) => {
         </div>
       </li>
       {descriptionIsShowed && (
-        <aside>
-          <textarea name="" id="" cols="30" rows="10">
-            {description}
-          </textarea>
-        </aside>
+        <form>
+          <textarea defaultValue={description}></textarea>
+          <input type="submit" value="save" />
+        </form>
       )}
     </>
   );
