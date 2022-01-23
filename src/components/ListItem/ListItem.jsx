@@ -12,13 +12,11 @@ const ListItem = ({ priority, description, title }) => {
     if (descriptionText !== false) {
       priorityQueue.values.forEach((item) => {
         if (item.priority === priority) {
-          console.log('bingo');
           item.val.description = descriptionText;
           updatePriorityQueue();
         }
       });
     }
-    console.log('here');
   };
 
   let priorityClass;
@@ -51,7 +49,6 @@ const ListItem = ({ priority, description, title }) => {
             className={Classes.expend}
             onClick={(e) => {
               setDescriptionIsShowed(!descriptionIsShowed);
-              console.log(e.target.parentElement);
               const ButtonClass =
                 e.target.parentElement.className === Classes.expend
                   ? Classes.shrink

@@ -15,7 +15,6 @@ const PriorityQueueProvider = ({ children }) => {
   const updatePriorityQueue = () => {
     const stringifyPriorityQueue = JSON.stringify(priorityQueue.values);
     localStorage.setItem('myPriorityQueue', stringifyPriorityQueue);
-    console.log(priorityQueue);
     setPriorityQueue(cloneDeep(priorityQueue));
   };
   return (
