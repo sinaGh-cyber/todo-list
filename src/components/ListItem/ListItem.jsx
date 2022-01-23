@@ -19,6 +19,33 @@ const ListItem = ({ priority, description, title }) => {
     }
   };
 
+  const expendShrinkBtnHandler = (e) => {
+    if (!descriptionIsShowed) setDescriptionIsShowed(true);
+
+    const ButtonClass =
+      e.target.parentElement.className === Classes.expend
+        ? Classes.shrink
+        : Classes.expend;
+
+    if (e.target.parentElement.classList.contains(Classes.expend)) {
+      setTimeout(() => {
+        e.target.parentElement.parentElement.parentElement.classList.add(
+          Classes.show
+        );
+      }, 20);
+    } else {
+      e.target.parentElement.parentElement.parentElement.classList.remove(
+        Classes.show
+      );
+      setTimeout(() => {
+        if (descriptionIsShowed) {
+          setDescriptionIsShowed(false);
+        }
+      }, 100);
+    }
+    e.target.parentElement.className = ButtonClass;
+  };
+
   let priorityClass;
   const priorityCode = Number((priority + '')[0]);
 
@@ -45,45 +72,16 @@ const ListItem = ({ priority, description, title }) => {
               <i className={Classes.icon}></i>
             </button>
           </div>
-          <button
-            className={Classes.expend}
-            onClick={(e) => {
-              if (!descriptionIsShowed) setDescriptionIsShowed(true);
-
-              const ButtonClass =
-                e.target.parentElement.className === Classes.expend
-                  ? Classes.shrink
-                  : Classes.expend;
-
-              if (e.target.parentElement.classList.contains(Classes.expend)) {
-                console.log('here');
-                setTimeout(() => {
-                  console.log(
-                    e.target.parentElement.parentElement.parentElement
-                  );
-                  e.target.parentElement.parentElement.parentElement.classList.add(
-                    Classes.show
-                  );
-                }, 20);
-              } else {
-                e.target.parentElement.parentElement.parentElement.classList.remove(
-                  Classes.show
-                );
-                setTimeout(() => {
-                  if (descriptionIsShowed) {
-                    setDescriptionIsShowed(false);
-                  }
-                }, 150);
-              }
-              e.target.parentElement.className = ButtonClass;
-            }}
-          >
+          <button className={Classes.expend} onClick={expendShrinkBtnHandler}>
             <i className={Classes.icon}></i>
           </button>
         </div>
       </li>
       {descriptionIsShowed && (
-        <form onSubmit={SaveDescriptionChange}>
+        <form
+          className={Classes.expendedTextarea}
+          onSubmit={SaveDescriptionChange}
+        >
           <textarea
             onChange={(e) => {
               setDescriptionText(e.target.value);

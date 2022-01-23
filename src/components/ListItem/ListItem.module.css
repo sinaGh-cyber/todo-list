@@ -26,27 +26,27 @@
 .listItem.gray {
   background-color: gray;
 }
-form {
+
+form.expendedTextarea {
   margin: auto;
   margin-bottom: 5px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* visibility: hidden; */
+  visibility: hidden;
   transform: translateY(-50px);
   transition: all 0.15s linear;
-  z-index: -1.5;
 }
-.show + form {
+.show + form.expendedTextarea {
   visibility: visible;
   transform: translateY(0);
   transition: all 0.15s linear;
 }
-form textarea {
+form.expendedTextarea textarea {
   width: 90%;
 }
-form input[type='submit'] {
+form.expendedTextarea input[type='submit'] {
   width: 90%;
   margin: 0 0 10px 0;
   /* border-radius: 0; */
