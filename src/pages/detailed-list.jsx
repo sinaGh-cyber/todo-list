@@ -11,7 +11,6 @@ const DetailedList = () => {
   const listItems = [];
   while (tempPriorityQueue.values.length) {
     let itemData = tempPriorityQueue.dequeue();
-    console.log(itemData);
 
     let listItem = (
       <ListItem

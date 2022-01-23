@@ -1,8 +1,25 @@
 import { useState } from 'react/cjs/react.development';
 import Classes from './ListItem.module.css';
+import { usePriorityQueue } from '../../provider/priorityQueueProvider';
 
 const ListItem = ({ priority, description, title }) => {
   const [descriptionIsShowed, setDescriptionIsShowed] = useState(false);
+  const [descriptionText, setDescriptionText] = useState(false);
+  const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
+
+  const SaveDescriptionChange = (e) => {
+    e.preventDefault();
+    if (descriptionText !== false) {
+      priorityQueue.values.forEach((item) => {
+        if (item.priority === priority) {
+          console.log('bingo');
+          item.val.description = descriptionText;
+          updatePriorityQueue();
+        }
+      });
+    }
+    console.log('here');
+  };
 
   let priorityClass;
   const priorityCode = Number((priority + '')[0]);
@@ -47,8 +64,13 @@ const ListItem = ({ priority, description, title }) => {
         </div>
       </li>
       {descriptionIsShowed && (
-        <form>
-          <textarea defaultValue={description}></textarea>
+        <form onSubmit={SaveDescriptionChange}>
+          <textarea
+            onChange={(e) => {
+              setDescriptionText(e.target.value);
+            }}
+            defaultValue={description}
+          ></textarea>
           <input type="submit" value="save" />
         </form>
       )}
