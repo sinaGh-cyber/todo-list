@@ -33,6 +33,13 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* visibility: hidden; */
+  transform: translateY(-50px);
+  transition: all 0.15s linear;
+}
+.show + form {
+  visibility: visible;
+  transform: translateY(0);
 }
 form textarea {
   width: 90%;
