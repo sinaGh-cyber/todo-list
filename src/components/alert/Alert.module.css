@@ -1,0 +1,22 @@
+section.background {
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.205);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px 5px 5px 5px;
+  /* top: -100px; */
+}
+
+section.alert {
+  width: 60%;
+  height: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react/cjs/react.development';
 import Classes from './ListItem.module.css';
 import { usePriorityQueue } from '../../provider/priorityQueueProvider';
+import Alert from '../alert/Alert';
 
 const ListItem = ({ priority, description, title }) => {
   const [descriptionIsShowed, setDescriptionIsShowed] = useState(false);
@@ -68,7 +69,12 @@ const ListItem = ({ priority, description, title }) => {
             <button className={Classes.done}>
               <i className={Classes.icon}></i>
             </button>
-            <button className={Classes.delete}>
+            <button
+              onClick={() => {
+                console.log('1');
+              }}
+              className={Classes.delete}
+            >
               <i className={Classes.icon}></i>
             </button>
           </div>
