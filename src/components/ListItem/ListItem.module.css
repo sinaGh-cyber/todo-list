@@ -176,11 +176,11 @@ form.expendedTextarea input[type='submit'] {
 }
 .done .icon {
   background-image: url(../../icons/done.png);
-  background-color: rgb(30, 255, 0);
+  background-color: rgb(32, 240, 32);
 }
 .done:hover .icon {
   transform: scale(1.02);
-  background-color: rgb(29, 199, 29);
+  background-color: rgb(30, 255, 0);
   transition: all 0.1s linear;
 }
 .done:active .icon {
