@@ -146,14 +146,13 @@ input[type='submit']:active {
   justify-content: center;
   align-items: center;
 
-  top: 40px;
-  right: 6vw;
+  top: -64px;
+  right: -30vw;
   padding: 10px 30px;
   height: 5vh;
 
   color: #fff;
   border-radius: 10px;
-
   transition: all 0.2 linear;
 }
 .success {
@@ -175,18 +174,37 @@ input[type='submit']:active {
     height: 65%;
   }
 
-  .error {
+  .alert {
+    top: -2vh;
     right: auto;
     margin: auto;
-  }
-  .success {
-    right: auto;
-    margin: auto;
+    height: 1.5vh;
   }
 }
 
 @media (max-height: 700px) {
   #description {
     height: 63%;
+  }
+}
+
+@media (min-height: 800px) {
+  .alert {
+    height: 5vh;
+  }
+}
+
+@media (min-height: 1000px) {
+  .alert {
+    top: auto;
+    height: 6vh;
+  }
+}
+
+@media (min-height: 1300px) {
+  .alert {
+    top: -2vh;
+    right: auto;
+    margin: auto;
   }
 }
