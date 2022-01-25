@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Menu from './components/menu/menu';
 import MainApp from './components/mainApp/mainApp';
+import AlertProvider from './provider/alertProvider';
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
         </header>
 
         <section className="card" id="card">
-          <MainApp />
-          <Menu />
+          <AlertProvider>
+            <MainApp />
+
+            <Menu />
+          </AlertProvider>
         </section>
       </main>
     </Router>

@@ -1,12 +1,13 @@
 import { useState } from 'react/cjs/react.development';
 import Classes from './ListItem.module.css';
 import { usePriorityQueue } from '../../provider/priorityQueueProvider';
-import Alert from '../alert/Alert';
+import { useAlert } from '../../provider/alertProvider';
 
 const ListItem = ({ priority, description, title }) => {
   const [descriptionIsShowed, setDescriptionIsShowed] = useState(false);
   const [descriptionText, setDescriptionText] = useState(false);
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
+  const { isAlert, setIsAlert } = useAlert();
 
   const SaveDescriptionChange = (e) => {
     e.preventDefault();
@@ -72,6 +73,9 @@ const ListItem = ({ priority, description, title }) => {
             <button
               onClick={() => {
                 console.log('1');
+                isAlert.showAlert = true;
+                isAlert.message = 'you are deleting this task.';
+                setIsAlert({ ...isAlert });
               }}
               className={Classes.delete}
             >
