@@ -69,3 +69,14 @@ section.alert {
 .cancel:hover {
   background-color: grey;
 }
+
+@media (max-width: 800px) {
+  section.background {
+    border-radius: 5px;
+  }
+
+  .buttons button {
+    width: 30%;
+    height: 40%;
+  }
+}
