@@ -3,7 +3,17 @@ import { useAlert } from '../../provider/alertProvider';
 
 const Alert = () => {
   const { isAlert, setIsAlert } = useAlert();
-  console.log('alert');
+
+  const onCancelBtnClickHandler = () => {
+    isAlert.showAlert = false;
+    setIsAlert({ ...isAlert });
+  };
+
+  const onDeleteBtnClickHandler = () => {
+    isAlert.method(isAlert.Id);
+    isAlert.showAlert = false;
+    setIsAlert({ ...isAlert });
+  };
   return (
     <>
       <section className={Classes.background}>
@@ -14,20 +24,13 @@ const Alert = () => {
           </div>
           <div className={Classes.buttons}>
             <button
-              onClick={() => {
-                isAlert.showAlert = false;
-                setIsAlert({ ...isAlert });
-              }}
+              onClick={onCancelBtnClickHandler}
               className={Classes.cancel}
             >
               CANCEL
             </button>
             <button
-              onClick={() => {
-                isAlert.method(isAlert.Id);
-                isAlert.showAlert = false;
-                setIsAlert({ ...isAlert });
-              }}
+              onClick={onDeleteBtnClickHandler}
               className={Classes.danger}
             >
               DELETE

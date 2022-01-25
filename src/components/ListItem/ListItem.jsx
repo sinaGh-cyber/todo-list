@@ -48,6 +48,12 @@ const ListItem = ({ priority, description, title }) => {
     e.target.parentElement.className = ButtonClass;
   };
 
+  const onDeleteBtnClickHandler = () => {
+    isAlert.showAlert = true;
+    isAlert.message = 'you are deleting this task.';
+    setIsAlert({ ...isAlert });
+  };
+
   let priorityClass;
   const priorityCode = Number((priority + '')[0]);
 
@@ -71,12 +77,7 @@ const ListItem = ({ priority, description, title }) => {
               <i className={Classes.icon}></i>
             </button>
             <button
-              onClick={() => {
-                console.log('1');
-                isAlert.showAlert = true;
-                isAlert.message = 'you are deleting this task.';
-                setIsAlert({ ...isAlert });
-              }}
+              onClick={onDeleteBtnClickHandler}
               className={Classes.delete}
             >
               <i className={Classes.icon}></i>
