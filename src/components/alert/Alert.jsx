@@ -14,9 +14,18 @@ const Alert = () => {
     isAlert.showAlert = false;
     setIsAlert({ ...isAlert });
   };
+
+  const onBackgroundClickHandler = (e) => {
+    if (e.target.classList.contains(Classes.background))
+      onCancelBtnClickHandler();
+  };
+
   return (
     <>
-      <section className={Classes.background}>
+      <section
+        onClick={onBackgroundClickHandler}
+        className={Classes.background}
+      >
         <section className={Classes.alert}>
           <div className={Classes.message}>
             <p>{isAlert.message}</p>
