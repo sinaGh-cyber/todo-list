@@ -51,6 +51,24 @@ const ListItem = ({ priority, description, title }) => {
   const onDeleteBtnClickHandler = () => {
     isAlert.showAlert = true;
     isAlert.message = 'you are deleting this task.';
+    isAlert.Id = priority;
+    isAlert.method = function deleteItemFromQueue(Id) {
+      let tempArray = [];
+      let lastDequeuedNode;
+      while (priorityQueue.values.length) {
+        lastDequeuedNode = priorityQueue.dequeue();
+        if (lastDequeuedNode.priority !== Id) {
+          tempArray.push(lastDequeuedNode);
+        } else {
+          break;
+        }
+      }
+      for (let node of tempArray) {
+        priorityQueue.enqueue(node.val, node.priority);
+      }
+      tempArray = null;
+      updatePriorityQueue();
+    };
     setIsAlert({ ...isAlert });
   };
 
