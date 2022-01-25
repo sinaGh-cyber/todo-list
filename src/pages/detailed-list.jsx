@@ -5,7 +5,7 @@ import ListItem from '../components/ListItem/ListItem';
 import Classes from './detailed-list.module.css';
 
 const DetailedList = () => {
-  const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
+  const { priorityQueue } = usePriorityQueue();
   const tempPriorityQueue = cloneDeep(priorityQueue);
 
   const listItems = [];
