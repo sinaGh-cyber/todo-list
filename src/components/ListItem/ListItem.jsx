@@ -75,6 +75,33 @@ const ListItem = ({ priority, description, title }) => {
     setIsAlert({ ...isAlert });
   };
 
+  const onUndoBtnClickHandler = () => {
+    isAlert.showAlert = true;
+    isAlert.message = 'you are Undoing  this finished task.';
+    isAlert.Id = priority;
+    isAlert.action = 'UNDO';
+    isAlert.method = function deleteItemFromQueue(Id) {
+      let tempArray = [];
+      let lastDequeuedNode;
+      while (priorityQueue.values.length) {
+        lastDequeuedNode = priorityQueue.dequeue();
+        if (lastDequeuedNode.priority !== Id) {
+          tempArray.push(lastDequeuedNode);
+        } else {
+          lastDequeuedNode.priority -= 30000000000000;
+          tempArray.push(lastDequeuedNode);
+          break;
+        }
+      }
+      for (let node of tempArray) {
+        priorityQueue.enqueue(node.val, node.priority);
+      }
+      tempArray = null;
+      updatePriorityQueue();
+    };
+    setIsAlert({ ...isAlert });
+  };
+
   const onDeleteBtnClickHandler = () => {
     isAlert.showAlert = true;
     isAlert.message = 'you are deleting this task.';
@@ -119,9 +146,17 @@ const ListItem = ({ priority, description, title }) => {
         <div className={Classes.title}>{title}</div>
         <div className={Classes.manageItem}>
           <div className={Classes.buttonGroup}>
-            <button onClick={onDoneBtnClickHandler} className={Classes.done}>
-              <i className={Classes.icon}></i>
-            </button>
+            {priorityClass === Classes.gray && (
+              <button onClick={onUndoBtnClickHandler} className={Classes.undo}>
+                <i className={Classes.icon}></i>
+              </button>
+            )}
+
+            {priorityClass !== Classes.gray && (
+              <button onClick={onDoneBtnClickHandler} className={Classes.done}>
+                <i className={Classes.icon}></i>
+              </button>
+            )}
 
             <button
               onClick={onDeleteBtnClickHandler}

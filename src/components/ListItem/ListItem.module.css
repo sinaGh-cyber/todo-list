@@ -187,3 +187,31 @@ form.expendedTextarea input[type='submit'] {
   transform: scale(0.99);
   transition: all 0.1s linear;
 }
+
+.undo {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  z-index: 1;
+  transition: all 0.1s linear;
+}
+
+.undo .icon {
+  background-image: url(../../icons/undo.png);
+  background-color: rgb(32, 240, 32);
+  z-index: 0;
+}
+
+.undo:hover .icon {
+  transform: scale(1.02);
+  background-color: rgb(30, 255, 0);
+  transition: all 0.1s linear;
+}
+
+.undo:active .icon {
+  transform: scale(0.99);
+  transition: all 0.1s linear;
+}
