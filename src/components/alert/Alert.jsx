@@ -9,7 +9,7 @@ const Alert = () => {
     setIsAlert({ ...isAlert });
   };
 
-  const onDeleteBtnClickHandler = () => {
+  const onTypedBtnClickHandler = () => {
     isAlert.method(isAlert.Id);
     isAlert.showAlert = false;
     setIsAlert({ ...isAlert });
@@ -19,6 +19,8 @@ const Alert = () => {
     if (e.target.classList.contains(Classes.background))
       onCancelBtnClickHandler();
   };
+
+  let buttonType = isAlert.action === 'DELETE' ? Classes.delete : Classes.noneDelete;
 
   return (
     <>
@@ -39,10 +41,10 @@ const Alert = () => {
               CANCEL
             </button>
             <button
-              onClick={onDeleteBtnClickHandler}
-              className={Classes.danger}
+              onClick={onTypedBtnClickHandler}
+              className={`${Classes.danger} ${buttonType}`}
             >
-              DELETE
+              {isAlert.action}
             </button>
           </div>
         </section>

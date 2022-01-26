@@ -10,11 +10,12 @@ const AlertProvider = ({ children }) => {
     message: '',
     method: false,
     Id: false,
+    action: '',
   });
 
   return (
     <alertContext.Provider value={{ isAlert, setIsAlert }}>
-      { children }
+      {children}
     </alertContext.Provider>
   );
 };

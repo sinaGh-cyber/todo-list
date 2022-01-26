@@ -57,11 +57,19 @@ section.alert {
   transition: all 0.2s linear;
 }
 
-.danger {
+.delete {
   background-color: red;
 }
-.danger:hover {
+.delete:hover {
   background-color: #d11a2a;
+}
+
+.noneDelete {
+  background-color: rgb(4, 168, 4);
+}
+
+.noneDelete:hover {
+  background-color: green;
 }
 .cancel {
   background-color: rgb(165, 164, 164);

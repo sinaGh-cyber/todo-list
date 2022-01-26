@@ -48,10 +48,38 @@ const ListItem = ({ priority, description, title }) => {
     e.target.parentElement.className = ButtonClass;
   };
 
+  const onDoneBtnClickHandler = () => {
+    isAlert.showAlert = true;
+    isAlert.message = 'you are marking this task as done.';
+    isAlert.Id = priority;
+    isAlert.action = 'Done';
+    isAlert.method = function deleteItemFromQueue(Id) {
+      let tempArray = [];
+      let lastDequeuedNode;
+      while (priorityQueue.values.length) {
+        lastDequeuedNode = priorityQueue.dequeue();
+        if (lastDequeuedNode.priority !== Id) {
+          tempArray.push(lastDequeuedNode);
+        } else {
+          lastDequeuedNode.priority += 30000000000000;
+          tempArray.push(lastDequeuedNode);
+          break;
+        }
+      }
+      for (let node of tempArray) {
+        priorityQueue.enqueue(node.val, node.priority);
+      }
+      tempArray = null;
+      updatePriorityQueue();
+    };
+    setIsAlert({ ...isAlert });
+  };
+
   const onDeleteBtnClickHandler = () => {
     isAlert.showAlert = true;
     isAlert.message = 'you are deleting this task.';
     isAlert.Id = priority;
+    isAlert.action = 'DELETE';
     isAlert.method = function deleteItemFromQueue(Id) {
       let tempArray = [];
       let lastDequeuedNode;
@@ -91,9 +119,10 @@ const ListItem = ({ priority, description, title }) => {
         <div className={Classes.title}>{title}</div>
         <div className={Classes.manageItem}>
           <div className={Classes.buttonGroup}>
-            <button className={Classes.done}>
+            <button onClick={onDoneBtnClickHandler} className={Classes.done}>
               <i className={Classes.icon}></i>
             </button>
+
             <button
               onClick={onDeleteBtnClickHandler}
               className={Classes.delete}
