@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import Classes from './ListItem.module.css';
 import { usePriorityQueue } from '../../provider/priorityQueueProvider';
 import { useAlert } from '../../provider/alertProvider';

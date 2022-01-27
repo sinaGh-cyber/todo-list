@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { createContext } from 'react/cjs/react.development';
+import { createContext } from 'react';
 // import { Children } from 'react/cjs/react.production.min';
 
 const alertContext = createContext(undefined);

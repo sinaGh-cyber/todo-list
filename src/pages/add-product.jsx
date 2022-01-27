@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import { usePriorityQueue } from '../provider/priorityQueueProvider';
 import Classes from './addProduct.module.css';
 
