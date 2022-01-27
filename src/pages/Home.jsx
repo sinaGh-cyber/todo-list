@@ -92,8 +92,8 @@ const Home = () => {
               {priorityQueue.values[0].val.title}{' '}
             </h1>
             <div className={Classes.description}>
-              {' '}
-              {priorityQueue.values[0].val?.description}{' '}
+              
+              <p>{priorityQueue.values[0].val?.description}</p>
             </div>
           </article>
 
