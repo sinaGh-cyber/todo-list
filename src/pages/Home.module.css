@@ -1,0 +1,82 @@
+.card {
+  width: 80%;
+  height: 60%;
+  background-color: transparent;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.green {
+  background-color: rgb(54, 138, 6);
+}
+
+.card.red {
+  background-color: rgb(224, 71, 51);
+}
+
+.card.yellow {
+  background-color: rgb(228, 146, 38);
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: inherit;
+}
+
+.do,
+.delete {
+  height: 100%;
+  width: 10%;
+  outline: none;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.1s linear;
+  z-index: 1;
+}
+
+.delete {
+  /* border-radius: 0 10px 10px 0; */
+  background-color: rgb(243, 45, 45);
+}
+
+.delete .icon {
+  background-image: url(../icons/delete.png);
+  z-index: 0;
+}
+.delete:hover .icon {
+  background-color: red;
+  transition: all 0.1s linear;
+}
+.delete:active .icon {
+  background-color: rgb(236, 0, 0);
+  transition: all 0.1s linear;
+}
+
+.do {
+  border-radius: 0 10px 10px 0;
+  background-color: rgb(10, 173, 10);
+}
+.do .icon {
+  background-image: url(../icons/done.png);
+  z-index: 0;
+}
+.do:hover .icon {
+  background-color: rgb(8, 160, 8);
+  transition: all 0.1s linear;
+}
+
+.do:active .icon {
+  background-color: green;
+  transition: all 0.1s linear;
+}
