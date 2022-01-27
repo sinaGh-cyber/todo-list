@@ -7,7 +7,6 @@ import Classes from './addProduct.module.css';
 const UnSubmittableTime = 3000;
 
 const AddProduct = () => {
-
   const [prevTime, setPrevTime] = useState(undefined);
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
 
@@ -20,6 +19,10 @@ const AddProduct = () => {
 
   useEffect(() => {
     setValue('priority', '3');
+
+    return () => {
+      setIsSuccess(false);
+    };
   }, [setValue]);
 
   const [isSuccess, setIsSuccess] = useState(false);
@@ -77,7 +80,6 @@ const AddProduct = () => {
         </p>
       }
       <form onSubmit={handleSubmit(submitter)}>
-        
         <div id={Classes.title}>
           <label htmlFor="title">Title:</label>
           <input

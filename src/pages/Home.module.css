@@ -47,7 +47,7 @@
 
 .delete {
   /* border-radius: 0 10px 10px 0; */
-  background-color: rgb(243, 45, 45);
+  background-color: rgb(235, 31, 31);
 }
 
 .delete .icon {
@@ -100,4 +100,19 @@
   color: rgb(218, 190, 190);
   letter-spacing: 0.5px;
   font-size: x-large;
+}
+
+div.noTask {
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+h1.noTask {
+    color: #fff;
+    font-size: xx-large;
+    text-align: center;
+    /* width: 70%; */
 }

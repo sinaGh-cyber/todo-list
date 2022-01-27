@@ -2,12 +2,20 @@ import { useState } from 'react/cjs/react.development';
 import Classes from './ListItem.module.css';
 import { usePriorityQueue } from '../../provider/priorityQueueProvider';
 import { useAlert } from '../../provider/alertProvider';
+import { useEffect } from 'react';
 
 const ListItem = ({ priority, description, title }) => {
   const [descriptionIsShowed, setDescriptionIsShowed] = useState(false);
   const [descriptionText, setDescriptionText] = useState(false);
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
   const { isAlert, setIsAlert } = useAlert();
+
+  useEffect(() => {
+    return () => {
+      isAlert.showAlert = false;
+      setIsAlert({ ...isAlert });
+    };
+  }, []);
 
   const SaveDescriptionChange = (e) => {
     e.preventDefault();
