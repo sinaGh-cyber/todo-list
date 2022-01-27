@@ -93,6 +93,7 @@
 .title {
   color: #fff;
   font-size: xx-large;
+  text-align: center;
   width:90%;
   word-break: break-all;
   /* overflow-y:auto; */
