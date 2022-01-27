@@ -1,10 +1,9 @@
 import React from 'react';
 import Classes from './Home.module.css';
-import { usePriorityQueue} from '../provider/priorityQueueProvider'
+import { usePriorityQueue } from '../provider/priorityQueueProvider';
 import { useAlert } from '../provider/alertProvider';
 
 const Home = () => {
-
   const { priorityQueue, updatePriorityQueue } = usePriorityQueue();
   const { isAlert, setIsAlert } = useAlert();
 
@@ -28,8 +27,8 @@ const Home = () => {
       </button>
 
       <article className={Classes.content}>
-        <h1 className={Classes.title}></h1>
-        <div className={Classes.description}></div>
+        <h1 className={Classes.title}> {priorityQueue.values[0].val.title} </h1>
+        <div className={Classes.description}> {priorityQueue.values[0].val?.description} </div>
       </article>
 
       <button className={Classes.do}>
